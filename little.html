@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html class="animated fadeIn">
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="little.css" type="text/css">
+</head>
+
+<body>
+  <div id='hero'>
+    <div class='layer-bg layer' data-depth='0.10' data-type='parallax'></div>
+    <div class='layer-1 layer' data-depth='0.20' data-type='parallax'></div>
+    <div class='layer-2 layer' data-depth='0.50' data-type='parallax'></div>
+    <div class='layer-3 layer' data-depth='0.80' data-type='parallax'></div>
+    <div class='layer-overlay layer' data-depth='0.85' data-type='parallax'></div>
+    <div class='layer-4 layer' data-depth='1.00' data-type='parallax'></div>
+  </div>
+  <div id='hero-mobile'></div>
+  <div id='content'>
+    <div class='container'>
+      <section class='first-section'>
+        <div class='row'>
+          <div class='col-sm-6'>
+            <h1>A journey of a thousand miles begins with a single step</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-6">
+            <p style="margin-right:100px;margin-top:80px">
+              My journey has modest beginnings in the Shenandoah valley, as a youth
+              of Berryville, Virginia. After a quiet childhood, I graduated from the
+              local high school in Spring, 2014, ready to take on the challenges
+              of university life. I brought a limited knowledge of programming,
+              but soon realized my passion, and my future, lied therein.
+            </p>
+            <p style="margin-right:100px;">
+              I am currently studying for a B.S. in Computer Science at the College of William and Mary, and
+              I expect to graduate in Spring, 2018. I can be reached at richiebonett@gmail.com.
+              <p>
+            </div>
+          <span style="padding-left:20px">
+            <div class="col xs-4">
+              <img src="images/profile.jpg" style="width:400px;height:400px;">
+            </div>
+          </span>
+        </div>
+      </section>
+      <div id="images">
+        <div class="row row-centered" style="margin-top:60px;">
+          <div class="col-xs-4 col-centered">
+            <a href="https://github.com/rfbonett" target="_blank">
+              <img src="images/github.svg"  alt="Link to my GitHub">
+            </a>
+          </div>
+          <div class="col-xs-4 col-centered">
+            <a href="http://devpost.com/rfbonett" target="_blank">
+              <img src="images/devpost.svg" alt="Link to my DevPost">
+            </a>
+          </div>
+          <div class="col-xs-4 col-centered">
+            <a href="https://www.linkedin.com/in/richardbonett" target="_blank">
+              <img src="images/linkedin.svg" alt="Link to my LinkedIn">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p style="padding-top:100px;"></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+window.addEventListener('scroll', function (event) {
+    var depth, i, layer, layers, len, movement, topDistance, translate3d;
+    topDistance = this.pageYOffset;
+    layers = document.querySelectorAll('[data-type=\'parallax\']');
+    for (i = 0, len = layers.length; i < len; i++) {
+        layer = layers[i];
+        depth = layer.getAttribute('data-depth');
+        movement = -(topDistance * depth);
+        translate3d = 'translate3d(0, ' + movement + 'px, 0)';
+        layer.style['-webkit-transform'] = translate3d;
+        layer.style['-moz-transform'] = translate3d;
+        layer.style['-ms-transform'] = translate3d;
+        layer.style['-o-transform'] = translate3d;
+        layer.style.transform = translate3d;
+    }
+    window.CP.exitedLoop(1);})
+  </script>
+</body>
+</html>
